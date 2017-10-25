@@ -1,0 +1,91 @@
+footer {
+	background-color: #404040;
+	min-height: 213px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	@include flex_center;
+	width: 100%;
+	.container {
+		@include container(1220px);
+		@include flex_center;
+		justify-content: space-between;
+	}
+}
+
+.footer {
+	&_subheading {
+		display: block;
+		@include font(18px,20px, normal, rgba(255, 255, 255, 0.9));
+		font-family: $th;
+		margin-top: 20px;
+	}
+	&_link {
+		@include flex_center;
+		text-decoration: none;
+		margin-bottom: 20px;
+		transition: .3s;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		img {
+			margin-right: 15px;
+		}
+		span {
+			color: rgba(255, 255, 255, 0.9);
+			font-family: $th;
+		}
+		&:hover {
+			opacity: .7;
+			@include trans(.3s);
+		}
+	}
+	&_logo {
+		@include flex_center;
+		text-decoration: none;
+		span {
+			width: 100%;
+			max-width: 130px;
+			margin-left: 10px;
+			font-size: 14px;
+			font-family: "Proxima Nova Th";
+			color: rgba(255, 255, 255, 0.9);
+			letter-spacing: 0;
+			margin-left: 10px;
+			letter-spacing: .8px;
+		}
+	}
+}
+
+.recall_btn {
+	position: absolute;
+	@include flex_center;
+	transform: translate(-50%, 0) rotate(-90deg);
+	position: fixed;
+	top: 50%;
+	left: calc(100% - 40px);
+	white-space: nowrap;	
+	text-decoration: none;
+	border-radius: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 40px;
+	z-index: 10;
+	background-color: #76DC7B;
+	color: #fff;
+	transition: .3s;
+	span {
+		margin-left: 11px;
+		display: inline-block;
+		@include font(16px, 1, normal, #fff);
+	}
+	svg {
+		g {
+			stroke: #fff;
+		}
+	}
+	&:hover {
+		box-shadow: 0 0 12px 0 #76DC7B;
+		@include trans(.3s);
+	}
+}
+

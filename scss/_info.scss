@@ -1,0 +1,66 @@
+.info {
+	@include flex_center;
+	@include container(1183px);
+	justify-content: space-between;
+	margin-top: 75px;
+	margin-bottom: 75px;
+	&_box {
+		&-title {
+			@include flex_center;
+			.symbol {
+				@include font(40px, 1, bold, #76DC7B);
+				display: inline-block;
+				margin-right: 5px;
+				letter-spacing: 1.5px;
+			}
+			.num {
+				display: inline-block;
+				@include font(40px, 1, bold, #fff);
+				position: relative;
+				padding: 3px 5px 1px 5px;
+				border-radius: 5px;
+				background-color: #76DC7B;
+				margin-right: 10px;
+				letter-spacing: 1.5px;
+				&:before {
+					@include elem(100%, 50%, initial, 0);
+					bottom: 0;
+					background-image: linear-gradient(0deg, rgba(255,255,255,.2) 0%, rgba(50, 111, 86, .2) 100%);
+				}
+			}
+			.txt {
+				@extend .symbol;
+				letter-spacing: 1.5px;
+				color: #000;
+				margin-right: 0;
+			}
+		}
+		&-subtitle {
+			display: block;
+			text-align: center;
+			font-family: $lt;
+			@include font(16px, 1.2, normal, #000);
+			margin-top: 5px;
+		}
+	}
+}
+
+
+.pplNum{
+	display: inline-block;
+	line-height: 40px;
+	.digit-con,
+	.comma {
+		height: 40px;
+		overflow: hidden;
+		display: inline-block;
+		vertical-align: bottom;
+		@include font(40px, 1, bold, #fff);
+	}
+	span{
+		position: relative;
+		@include font(40px, 1, bold, #fff);
+		z-index: 2147483647;
+		display: inline-block;
+	}
+}

@@ -1,0 +1,295 @@
+.service {
+	margin-top: 92px;
+	.container {
+		@include container(1220px);
+	}
+	&_row {
+		display: flex;
+		margin-top: 80px;
+		align-items: flex-start;
+	}
+	&_links {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&_link {
+		width: 255px;
+		margin-right: 155px;
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		margin-bottom: 75px;
+		transition: .3s;
+		&-icon {
+			width: 80px;
+			text-align: center;
+			margin-right: 20px;
+			fill: #000;
+		}
+		&-txt {
+			display: inline-block;
+			font-family: $lt;
+			@include font(16px, normal, normal, #404040);
+		}
+		&:hover {
+			opacity: .5;
+			@include trans(.3s);
+		}
+	}
+
+	&_form {
+		min-width: 400px;
+		background-image: url("../img/form_bg.png");
+		background-position: top;
+		background-repeat: no-repeat;
+		margin-top: -80px;
+		padding: 46px 47px;
+		padding-bottom: 115px;
+		&-title {
+			display: block;
+			@include font(24px, 1, bold, #000);
+		}
+
+		&-box {
+			position: relative;
+			width: 100%;
+			display: block;
+			margin-top: 25px;
+			input {
+				width: 100%;
+				height: 40px;
+				border: none;
+				background-color: transparent;
+				border-bottom: 1px rgba(0,0,0,.2) solid;
+				@include font(14px, 24px, normal, #000);
+				font-family: $lt;
+				z-index: 2;
+				position: relative;
+				&.wpcf7-not-valid {
+					border-color: red;
+				}
+			}
+			label {
+				margin: 0;
+				position: absolute;
+				top: 10px;
+				left: 0;
+				@include font(18px, 24px, normal, #000);
+				opacity: 0.8;
+				font-family: $lt;
+				transition: all .3s;
+				&.active {
+					top: -10px;
+					font-size: 12px;
+					color: #76DC7B;
+					transition: all .3s;
+				}
+			}
+
+			textarea {
+				border: 1px rgba(0,0,0,.2) solid;
+				resize: none;
+				width: 100%;
+				height: 163px;
+				@include font(14px, 21px, normal, #000);
+				font-family: $lt;
+				padding: 10px;
+			}
+
+			&.msg {
+				padding-top: 37px;
+			}
+
+		}
+
+		button {
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+			@include font(15px, 40px, 600, #000);
+			padding-left: 19px;
+			padding-right: 19px;
+			display: inline-block;
+			border: 1px rgba(0,0,0,.2) solid;
+			border-radius: 100px;
+			text-decoration: none;
+			margin-top: 13px;
+			font-family: $lt;
+			font-size: 16px;
+			border: 1px rgba(0,0,0,.2) solid;
+			background-color: transparent;
+			cursor: pointer;
+			transition: .3s;
+			&:hover {
+				box-shadow: 0 0 5px 0 #76DC7B;
+				background: #76DC7B;
+				border-color: transparent;
+				color: #FFFFFF;
+				@include trans(.3s);
+			}
+		}
+	}
+
+	&_info {
+		height: 600px;
+		background-image: url("../img/service_info.png");
+		background-position: center;
+		background-repeat: no-repeat;
+		border-radius: 10px;
+		padding: 110px 0;
+		position: relative;
+		&-video {
+			@include container(1220px);
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			@include translate(-50%, 0);
+			border-radius: 10px;
+			overflow: hidden;
+			video {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				min-width: 100%;
+				min-height: 100%;
+				width: auto;
+				height: auto;
+				z-index: -100;
+				transform: translateX(-50%) translateY(-50%);
+				background-size: cover;
+			}
+		}
+		p {
+			max-width: 410px;
+			margin-top: 30px;
+		}
+		.company_name {
+			font-family: $th;
+			font-size: 16px;
+			color: #000000;
+			margin-top: 20px;
+			b {
+				font-size: 22px;
+				display: block;
+				line-height: 1;
+				font-family: $lt;
+				font-weight: 600;
+			}
+		}
+		&-content {
+			overflow: hidden;
+			height: 100%;
+			position: relative;
+			z-index: 2;
+			&::-webkit-scrollbar { 
+				display: none; 
+			}
+			&.active {
+				overflow: auto;
+			}
+			&_container {
+				@include container(1220px);
+				height: 100%;
+				padding: 0 95px;
+			}
+			&_item {
+				// margin-bottom: 200px;
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				flex-direction: column;
+				height: 100%;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				.heading {
+					display: block;
+					font-size: 22px;
+					max-width: 400px;
+					color: #000;
+					font-family: $lt;
+					font-weight: 600;
+					margin-bottom: 20px;
+				}
+				&_video {
+					position: relative;
+					display: inline-block;
+					.play_video {
+						position: absolute;
+						transform: translate(-50%, -50%);
+						top: 50%;
+						left: 50%;
+						display: inline-block;
+						text-align: center;
+						text-decoration: none;
+						span {
+							font-size: 22px;
+							display: block;
+							font-family: $lt;
+							line-height: 1;
+							font-weight: 600;
+							color: #fff;
+						}
+						circle {
+							transition: .3s;
+						}
+						&:hover {
+							circle {
+								opacity: 1;
+								@include trans(.3s);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&-slider {
+			max-width: 500px;
+			width: 100%;
+			margin-top: 30px;
+			&_item {
+				height: 168px;
+				text-align: center;
+				img {
+					margin: 10px;
+					display: inline-block;
+				}
+				&.slick-current {
+					img {
+						transform: scale(1.2)
+					}
+				}
+			}
+			.prev_arrow,
+			.next_arrow {
+				position: absolute;
+				bottom: 120%;
+				right: 0;
+				width: 52px;
+				height: 52px;
+				border-radius: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				cursor: pointer;
+				&:hover {
+					background-color: #76DC7B;
+					g {
+						stroke: #fff;
+					}
+				}
+			}
+			.prev_arrow {
+				right: 52px;
+			}
+		}
+	}
+}
+
+span.wpcf7-not-valid-tip,
+div.wpcf7-validation-errors {
+	display: none;
+}

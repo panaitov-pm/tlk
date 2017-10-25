@@ -1,0 +1,37 @@
+.partners {
+	@include container(1220px);
+	margin-top: 75px;
+	&_slider {
+		padding-top: 70px;
+		.slick-track {
+			@include flex_center;
+		}
+		&-item {
+			img {
+				margin: 0 auto;
+			}
+		}
+	}
+	.prev_arrow,
+	.next_arrow {
+		position: absolute;
+		bottom: 100%;
+		right: 0;
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		&:hover {
+			background-color: #76DC7B;
+			g {
+				stroke: #fff;
+			}
+		}
+	}
+	.prev_arrow {
+		right: 52px;
+	}
+}

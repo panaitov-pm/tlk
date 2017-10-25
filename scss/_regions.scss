@@ -1,0 +1,228 @@
+.regions {
+	width: 100%;
+	background-color: #fff;
+	overflow: hidden;
+	&__title {
+		font-size: 42px;
+		color: #76DC7B;
+		line-height: 42px;
+		text-shadow: 0 0 4px #76DC7B;
+		position: relative;
+		z-index: 10;
+	}
+	&_wrapper {
+		@include container(1220px);
+		background-image: linear-gradient(-180deg, #565656 4%, #4A4A4A 91%);
+		border-radius: 10px;
+		padding: 20px;
+		position: relative;
+		&:before {
+			@include elem(24px, 318px, 100%, 109px);
+			background-image: url("../img/rectangle.png");
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: 1;
+		}
+		&:after {
+			@include elem(24px, 318px, 100%, initial);
+			right: 109px;
+			background-image: url("../img/rectangle.png");
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: 1;
+		}
+	}
+	&_container {
+		background: #404040;
+		box-shadow: inset 0 1px 9px 0 rgba(0,0,0,0.50);
+		border-radius: 5px;
+		padding-top: 70px;
+		padding-left: 90px;
+		padding-bottom: 26px;
+		height: 760px;
+		position: relative;
+		.overlay_box {
+			position: absolute;
+			width: calc(100% + 40px);
+			height: calc(100% + 40px);
+			top: -20px;
+			left: -20px;
+			background-image: url("../img/screen_overlay.png");
+			border-radius: 10px;
+		}
+	}
+	&_tabs {
+		@include flex_center;
+		margin-top: 15px;
+		position: relative;
+		z-index: 10;
+		a {
+			@include flex_center;
+			text-decoration: none;
+			margin-right: 27px;
+			transition: all .3s;
+			span {
+				@include font(24px, 1, 500, #fff);
+				margin-left: 5px;
+				display: inline-block;
+			}
+			&:hover {
+				opacity: .5;
+				@include trans(.3s);
+			}
+			&.active {
+				opacity: .5;
+			}
+		}
+	}
+
+	&_content {
+		margin-top: 30px;
+		position: relative;
+		height: 570px;
+		&-row {
+			display: flex;
+			align-items: flex-start;
+			position: relative;
+			height: 100%;
+		}
+		&-title {
+			@include flex_center;
+			opacity: 0;
+			display: none;
+			margin-top: 80px;
+			transition: opacity 1s;
+			b {
+				@include font(100px, 100px, bold, #fff);
+				text-shadow: 0 0 7px rgba(255,255,255,0.50);
+			}
+			.txt {
+				font-family: $lucida;
+				@include font(42px, 42px, normal, #fff);
+				text-shadow: 0 0 7px rgba(255,255,255,0.50);
+				font-family: $th;
+				margin-top: -7px;
+				margin-left: 10px;
+			}
+			&.active {
+				display: flex;
+				opacity: 1;
+				transition: opacity 1s;
+			}
+		}
+		&-list {
+			position: relative;
+			margin-top: 20px;
+			display: none;
+			li {
+				@include flex_center;
+				span {
+					@include font(24px, 52px, 300, #fff);
+					font-family: $lt;
+					text-shadow: 0 0 4px rgba(255,255,255,0.50);
+					display: inline-block;
+					white-space: nowrap;
+					margin-left: 14px;
+				}
+			}
+			&:before {
+				@include elem(100%, 40%, initial, 0);
+				bottom: 0;
+				background-image: linear-gradient(-180deg, rgba(64,64,64,0.00) 3%, #404040 85%);
+			}
+		}
+		&-btn {
+			z-index: 10;
+			position: absolute;
+			bottom: 60px;
+			left: 90px;
+			a {
+				@include font(15px, 40px, 600, #fff);
+				padding-left: 19px;
+				padding-right: 19px;
+				display: inline-block;
+				border: 1px rgba(255,255,255,.6) solid;
+				border-radius: 100px;
+				text-decoration: none;
+				margin-top: 13px;
+				font-family: $lt;
+				font-size: 16px;
+				background-color: transparent;
+				cursor: pointer;				
+				transition: .3s;
+				&:hover {
+					box-shadow: 0 0 5px 0 #76DC7B;
+					background: #76DC7B;
+					border-color: transparent;
+					color: #FFFFFF;
+					@include trans(.3s);
+				}
+			}
+		}
+
+
+		&-map {
+			width: 100%;
+			margin-top: -50px;
+			margin-top: -100px;
+			@include trans(1s);
+			&.active {
+				width: 900px;
+				margin-right: -50px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				@include trans(1s);
+			}
+			img {
+				max-width: 100%;
+				@include trans(1s);
+			}
+		}
+	}
+
+
+	&_track {
+		width: 100%;
+		padding-top: 253px;
+		position: relative;
+		&__title {
+			position: absolute;
+			display: block;
+			text-align: center;
+			width: 100%;
+			@include font(62px, 42px, bold, #676767);
+			left: 0;
+			top: 210px;
+			z-index: 2;
+		}
+		.mountains {
+			position: absolute;
+			width: 100%;
+			height: 253px;
+			top: 0;
+			left: 0;
+			background-image: url("../img/mountains.png");
+			background-repeat: repeat-x;
+			background-size: 100% 100%;
+			background-position: bottom;
+			z-index: 0;
+		}
+		.track {
+			width: 100%;
+			height: 96px;
+			background-image: url("../img/road.png");
+			background-position: center;
+			position: relative;
+			z-index: 2;
+		}
+		.car {
+			width: 632px;
+			height: 171px;
+			top: 165px;
+			left: 532px;
+			position: absolute;
+			z-index: 2;
+		}
+	}
+}

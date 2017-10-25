@@ -1,0 +1,141 @@
+.contacts {
+	margin-top: 75px;
+	.container {
+		@include container(1220px);
+	}
+	h2 {
+		margin-bottom: 45px;
+	}
+
+	&_row {
+		display: flex;
+		margin-bottom: 40px;
+		&-adress {
+			width: 50%;
+			span {
+				font-family: $lt;
+				@include font(22px, 20px, normal, #404040);
+				b {
+					font-weight: 600;
+					display: block;
+					margin-bottom: 5px;
+				}
+			}
+		}
+		&-box {
+			width: 50%;
+			display: flex;
+			& > div {
+				margin-right: 65px;
+				span {
+					@include font(18px, 24px, 600, #404040);
+					display: block;
+				}
+				a {
+					text-decoration: none;
+					@extend span;
+					font-weight: normal;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		&-btn {
+			width: 50%;
+			a {
+				@include font(15px, 40px, bold, #000);
+				padding-left: 19px;
+				padding-right: 19px;
+				display: inline-block;
+				border: 1px rgba(0,0,0,.2) solid;
+				border-radius: 100px;
+				text-decoration: none;
+				transition: .3s;
+				&:hover {
+					box-shadow: 0 0 5px 0 #76DC7B;
+					background: #76DC7B;
+					color: #FFFFFF;
+					border-color: transparent;
+					@include trans(.3s);
+				}
+			}
+		}
+	}
+}
+
+#map {
+	width: 100%;
+	height: 600px;
+}
+
+.map {
+	position: relative;
+	margin-top: 75px;
+	&_select {
+		z-index: 2;
+		@include absolute(105px, 0);
+		width: 100%;
+		@include flex_center;
+		justify-content: center;
+		&_box {
+			position: relative;
+			a {
+				@include font(40px, 1, 600, #404040);
+				text-decoration: none;
+			}
+			#selected_city {
+				position: relative;
+				padding-right: 32px;
+				&:before {
+					@include elem(24px, 19px, 50%, initial);
+					right: 0;
+					transform: translate(0, -50%);
+					background-image: url("../img/down_arrow.svg");
+					background-position: center;
+					background-repeat: no-repeat;
+				}
+				&.active {
+					&:before {
+						transform: translate(0, -50%) rotate(180deg);
+					}
+				}
+			}
+		}
+		&_list {
+			@include absolute(100%, 0);
+			display: none;
+			a {
+				&:hover {
+					color: #76DC7B;
+				}
+			}
+		}
+
+		&_links {
+			margin-left: 28px;
+			background: #fff;
+			border: 1px #76DC7B solid;
+			border-radius: 100px;
+			a {
+				padding-left: 20px;
+				padding-right: 20px;
+				margin: 0;
+				border-radius: 100px;
+				font-family: $lt;
+				@include font(16px, 40px, 600, #404040);
+				display: inline-block;
+				cursor: pointer;
+				text-decoration: none;
+				transition: .3s;
+				&.active {
+					color: #fff;
+					box-shadow: 0 0 12px 0 #76DC7B;
+					background-color: #76DC7B;
+					@include trans(.3s);
+				}
+			}
+		}
+	}
+}

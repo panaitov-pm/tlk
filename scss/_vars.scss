@@ -1,0 +1,62 @@
+@import "bourbon";
+@import "_fonts";
+
+$rg: 'Proxima Nova Rg';
+$th: 'Proxima Nova Th';
+$bl: 'Proxima Nova Bl';
+$lt: 'Proxima Nova Lt';
+$lucida: 'Lucida Grande';
+
+@mixin elem($width, $height, $top, $left) {
+	content: "";
+	position: absolute;
+	width: $width;
+	height: $height;
+	top: $top;
+	left: $left;
+}
+
+@mixin bg($bg_color, $bg_img) {
+	background-color: $bg_color;
+	background-image: $bg_img;
+}
+
+@mixin font($size, $line_height, $font_weight, $color) {
+	font-size: $size;
+	line-height: $line_height;
+	font-weight: $font_weight;
+	color: $color;
+}
+
+@mixin box($block, $w, $h, $margin, $padding) {
+	display: $block;
+	width: $w;
+	height: $h;
+	margin: $margin;
+	padding: $padding;
+}
+
+@mixin flex_center() {
+	display: flex;
+	align-items: center;
+}
+
+@mixin absolute($top, $left) {
+	position: absolute;
+	top: $top;
+	left: $left;
+}
+
+@mixin container($max) {
+	width: 100%;
+	max-width: $max;
+	margin: 0 auto;
+}
+
+@mixin translate($x, $y) {
+	transform: translate($x, $y);
+}
+
+@mixin trans($s) {
+	transition: all $s;
+}
